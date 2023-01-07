@@ -314,7 +314,7 @@ print(" ".join(cmd))
     /usr/bin/ffmpeg -y -ss 0.00 -i ./video.mp4 -t 120.00 -map 0 -vcodec copy -acodec copy ./subclip_0_3000.mp4
 
 
-<video src="subclip_0_3000.mp4" width="640" height="360" controls></video>
+[video](https://github.com/isakruas/meteors/blob/master/subclip_0_3000.mp4?raw=true)
 
 Como pode ser observado, de fato, no intervalo apresentado não há passagem de objetos. Portanto, vamos reescrever o algoritmo de forma a que ele analise todos os intervalos do vídeo.
 
@@ -419,7 +419,7 @@ Observe que o valor de alpha foi manualmente ajustado para 3.7 com o objetivo de
 
 Observe que, no intervalo entre 417000 e 417500, notamos um aumento crescente do desvio padrão, seguido de uma queda brusca, que faz com que o valor se aproxime novamente da média. Isso sugere que houve uma perturbação nos dados durante esse período de tempo, possivelmente causada pela passagem de um objeto. No entanto, o tempo de crescimento da curva (um pouco mais de 15 segundos) indica que esse objeto provavelmente não é um meteoro ou bólido, que tendem a ter duração muito menor. As características da curva sugerem que o objeto pode ser um satélite, avião ou outro objeto semelhante, mas também é possível que a perturbação seja causada por anomalias nos sensores da câmera (CMOS). Vamos analisar o vídeo recortado deste intervalo de tempo.
 
-<video src="subclip_417000_420000.mp4" width="640" height="360" controls></video>
+[video](https://github.com/isakruas/meteors/blob/master/subclip_417000_420000.mp4?raw=true)
 
 Ao considerarmos as possibilidades acima, chegamos à conclusão de que a explicação mais provável para a perturbação nos dados é uma anomalia no sensor CMOS da câmera.
 
@@ -429,7 +429,7 @@ Ao considerarmos as possibilidades acima, chegamos à conclusão de que a explic
 
 Observe que a curva deste intervalo tem uma característica diferente da apresentada no gráfico anterior. Ao compararmos com o gráfico anterior, percebemos que a curva deste intervalo apresenta uma característica diferente, com um pico alto de desvio padrão em um curto período de tempo. Pelo que eu tenho visto em minhas análises anteriores, este é um padrão típico de passagens de meteoros ou bólidos. Vamos analisar o trecho do vídeo correspondente a este intervalo para confirmar se ele efetivamente mostra a passagem de um objeto.
 
-<video src="subclip_540000_543000.mp4" width="640" height="360" controls></video>
+[video](https://github.com/isakruas/meteors/blob/master/subclip_540000_543000.mp4?raw=true)
 
 Como previsto a partir da observação do gráfico, este intervalo de tempo realmente apresenta a passagem de um objeto, provavelmente um meteoro ou bólido.
 
@@ -439,7 +439,7 @@ Como previsto a partir da observação do gráfico, este intervalo de tempo real
 
 Observe que este gráfico tem uma característica diferente das outras duas apresentadas. Ele apresenta um pico expressivo nos valores do desvio padrão e, após este pico, os valores continuam oscilando fortemente por um período de tempo. Embora este padrão possa lembrar a passagem de um meteoro ou bólido (com um pico alto seguido de uma queda), é mais provável que represente a passagem de um avião ou satélite, a menos que se trate de uma chuva de meteoros. Vamos analisar o vídeo recortado deste intervalo de tempo.
 
-<video src="subclip_570000_573000.mp4" width="640" height="360" controls></video>
+[video](https://github.com/isakruas/meteors/blob/master/subclip_570000_573000.mp4?raw=true)
 
 Observe que há a passagem de um objeto ao longo do vídeo, e que este objeto, de fato, não possui as características de um bólido
 
