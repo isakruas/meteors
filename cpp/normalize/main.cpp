@@ -7,7 +7,7 @@ int main(int argc, char **argv)
     // 1. Verificar se o número correto de argumentos foi passado
     if (argc != 6)
     {
-        std::cout << "Use: ./normalize start_interval duration_in_seconds frame_size video_file_path.mp4 save_files_path/" << std::endl;
+        std::cout << "Usage: " << argv[0] << " <start_interval> <duration_in_seconds> <frame_size> <video_file_path> <save_files_path>" << std::endl;
         return -1;
     }
 
