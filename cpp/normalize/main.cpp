@@ -7,7 +7,6 @@ int main(int argc, char **argv)
     // 1. Verificar se o número correto de argumentos foi passado
     if (argc != 6)
     {
-        // ./normalize 0 30 299 /meteors/2023-03-05-214115.webm /meteors/c/2023-03-05-214115/
         std::cout << "Use: ./normalize start_interval duration_in_seconds frame_size video_file_path.mp4 save_files_path/" << std::endl;
         return -1;
     }
@@ -64,8 +63,21 @@ int main(int argc, char **argv)
             cv::Mat next_frame;
             cap.read(next_frame);
 
-            // 15. Sobrepor os quadros
-            cv::addWeighted(frame, 0.5, next_frame, 0.5, 0.0, frame);
+            // 15. Sobrepor os quadros mantendo os pixels mais claros
+            for (int y = 0; y < frame.rows; y++)
+            {
+                for (int x = 0; x < frame.cols; x++)
+                {
+                    cv::Vec3b pixel1 = frame.at<cv::Vec3b>(y, x);
+                    cv::Vec3b pixel2 = next_frame.at<cv::Vec3b>(y, x);
+                    cv::Vec3b result_pixel;
+                    for (int i = 0; i < 3; i++)
+                    {
+                        result_pixel[i] = std::max(pixel1[i], pixel2[i]);
+                    }
+                    frame.at<cv::Vec3b>(y, x) = result_pixel;
+                }
+            }
         }
 
         // 16. Normalizar a imagem dividindo cada valor de pixel pelo valor máximo da imagem e multiplicando pelo
